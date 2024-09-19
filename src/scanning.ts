@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
-import { LabinsightViewerProvider } from './provider';
+import { LabinsightViewerRuleProvider } from './core/rules/ruleProvider';
 
-export function scanAllWorkspaces(provider: LabinsightViewerProvider) {
+export function scanAllWorkspaces(provider: LabinsightViewerRuleProvider) {
   provider.scanAllWorkspaces();
 }

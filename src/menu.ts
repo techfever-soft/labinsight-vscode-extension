@@ -1,5 +1,5 @@
-import { LabinsightViewerProvider } from './provider';
+import { LabinsightViewerRuleProvider } from "./core/rules/ruleProvider";
 
-export function goBackToMenu(provider: LabinsightViewerProvider) {
+export function goBackToMenu(provider: LabinsightViewerRuleProvider) {
   provider.showMainMenu();
 }

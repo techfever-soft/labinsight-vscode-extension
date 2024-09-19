@@ -2,7 +2,7 @@
   "name": "labinsight",
   "displayName": "LabInsight",
   "description": "A powerful static code analysis tool that provides deep insights into your codebase.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "engines": {
     "vscode": "^1.92.2"
   },
@@ -33,8 +33,12 @@
     "views": {
       "labinsightViewerViewContainer": [
         {
-          "id": "labinsightViewerView",
+          "id": "labinsightViewerViewRules",
           "name": "Rules"
+        },
+        {
+          "id": "labinsightViewerViewReports",
+          "name": "Reports"
         }
       ]
     },
@@ -47,19 +51,56 @@
           "light": "resources/add-light.svg",
           "dark": "resources/add-dark.svg"
         }
+      },
+      {
+        "command": "labinsightViewer.analyze",
+        "title": "Analyze Codebase",
+        "category": "Labinsight Viewer",
+        "icon": {
+          "light": "resources/analyze-light.svg",
+          "dark": "resources/analyze-dark.svg"
+        }
+      },
+      {
+        "command": "labinsightViewer.viewRules",
+        "title": "View Rules",
+        "category": "Labinsight Viewer"
+      },
+      {
+        "command": "labinsightViewer.viewReports",
+        "title": "View Reports",
+        "category": "Labinsight Viewer"
+      },
+      {
+        "command": "labinsightViewer.refreshReports",
+        "title": "Refresh Reports",
+        "category": "Labinsight Viewer",
+        "icon": {
+          "light": "resources/refresh-light.svg",
+          "dark": "resources/refresh-dark.svg"
+        }
       }
     ],
     "menus": {
       "view/title": [
         {
-          "command": "labinsightViewer.createLabinsightFile",
-          "when": "view == labinsightViewerView",
+          "command": "labinsightViewer.analyze",
           "group": "navigation"
+        },
+        {
+          "command": "labinsightViewer.createLabinsightFile",
+          "group": "navigation"
+        },
+        {
+          "command": "labinsightViewer.refreshReports",
+          "group": "navigation",
+          "when": "view == labinsightViewerViewReports"
         }
       ]
     }
   },
   "scripts": {
+    "build": "tsc && tsc-alias && webpack",
     "vscode:prepublish": "npm run package",
     "compile": "webpack",
     "watch": "webpack --watch",
@@ -72,6 +113,8 @@
     "test": "vscode-test"
   },
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
     "@types/mocha": "^10.0.7",
     "@types/node": "20.x",
     "@types/vscode": "^1.92.2",
@@ -79,13 +122,18 @@
     "@typescript-eslint/parser": "^8.3.0",
     "@vscode/test-cli": "^0.0.10",
     "@vscode/test-electron": "^2.4.1",
+    "babel-loader": "^9.2.1",
     "eslint": "^9.9.1",
+    "handlebars-loader": "^1.7.3",
     "ts-loader": "^9.5.1",
     "typescript": "^5.5.4",
     "webpack": "^5.94.0",
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@techfever/labinsight": "^0.1.1"
+    "@inquirer/prompts": "^6.0.1",
+    "@techfever/labinsight": "^0.1.6",
+    "@types/commander": "^2.12.0",
+    "commander": "^12.1.0"
   }
 }

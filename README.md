@@ -20,6 +20,7 @@ Whether you're working with JavaScript, TypeScript, or Python, LabInsight helps 
 
 - **Create Labinsight Files:** Easily create new `.labinsight` files with a predefined structure directly from the VSCode interface.
 - **Integrated View:** Access and manage your Labinsight files through a dedicated "Rules" view in the Activity Bar.
+- **View Reports:** Visualize and explore generated reports (JSON, HTML) in the "Reports" view, with expandable sections and detailed information.
 
 ## 🔧 Installation
 
@@ -59,13 +60,17 @@ Whether you're working with JavaScript, TypeScript, or Python, LabInsight helps 
 
 Labinsight provides the following command to enhance your productivity:
 
-| Command ID                              | Description                                        |
-|-----------------------------------------|----------------------------------------------------|
-| `labinsightViewer.createLabinsightFile` | Creates a new `.labinsight` file with a predefined structure. |
+| Command ID                              | Description                                                        |
+| --------------------------------------- | ------------------------------------------------------------------ |
+| `labinsightViewer.createLabinsightFile` | Creates a new `.labinsight` file with a predefined structure.      |
+| `labinsightViewer.analyze`              | Runs the analysis on the current workspace and generates a report. |
+| `labinsightViewer.viewRules`            | Displays the "Rules" view in the Labinsight panel.                 |
+| `labinsightViewer.viewReports`          | Displays the "Reports" view in the Labinsight panel.               |
+| `labinsightViewer.refreshReports`       | Refreshes the reports view to display updated data.                |
+| `labinsightViewer.viewReportDetails`    | Opens a detailed view of a specific report in a webview.           |
 
 ## ⚙️ Configuration
 
 Currently, Labinsight does not offer additional configuration options. Future updates may include customizable templates for `.labinsight` files and advanced management features.
 
 # Happy Coding ! 🚀
-
